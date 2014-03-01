@@ -1,12 +1,13 @@
 Name       : hawaii-system-preferences
-Version    : 0.2.0.1.20131229.8341fd6
+Version    : 0.2.0.1.20140301.24fa434
 Release    : 1
 Group      : Applications/System
-License    : BSD
-Summary    : Hawaii system preferences package
-Description: Provides greenisland system preferences for Hawaii desktop
+License    : LGPLv2.1+ and GPLv2+
+URL        : https://github.com/mauios/hawaii-system-preferences.git
+Summary    : Hawaii system preferences
+Description: Provides preferences for the Hawaii desktop environment.
 Sources    : 
-    - system-preferences-%{version}.tar.bz2
+    - hawaii-system-preferences-%{version}.tar.xz
 
 Configure  : cmake 
 ConfigOptions: 
@@ -14,41 +15,35 @@ ConfigOptions:
 
 PkgConfigBR:
     - Qt5Core
-    - Qt0Xdg
     - Qt5DBus
     - Qt5Gui
-    - Qt5AccountsService
     - Qt5Widgets
     - Qt5Network
     - Qt5Qml
     - Qt5Quick
-    - Qt0Configuration
-    - polkit-qt-1
+    - polkit-qt5-1
 
 PkgBR:
     - cmake
     - bzip2-devel
-    - xz-devel
     - qt5-qttools-linguist
-    - kde-libkdeqt5staging-devel
-    - kde-kcoreaddons-devel
-    - kde-kconfig-devel
-
+    - qtaccountsservice-devel
+    - qtconfiguration-devel
 
 Files:  
    - "%{_bindir}/hawaii-system-preferences"
    - "%{_libdir}/libHawaiiSystemPreferences.so.*"
-   - "%{_datadir}/hawaii-system-preferences/translations/it.qm"
-   - "%{_datadir}/applications/hawaii-system-preferences.desktop"
-   - "%{_libdir}/hawaii/plugins/preferences/background.so"
-   - "%{_libdir}/hawaii/plugins/preferences/network.so"
+   - "%{_datadir}/hawaii-system-preferences/translations/*.qm"
+   - "%{_datadir}/hawaii-system-preferences/plugins/*/translations/*.qm"
+   - "%{_datadir}/applications/*.desktop"
+   - "%{_libdir}/hawaii/plugins/preferences/*.so"
 
 SubPackages:
     - Name: devel
       Summary: Hawaii System Preferences development files
       Group: Development/Libraries
       Description: |
-          Provides a framework to develop additional System Preference modules
+          Provides a framework to develop additional System Preference modules.
       Files:
           - "%{_includedir}/Hawaii/SystemPreferences/"
           - "%{_libdir}/libHawaiiSystemPreferences.so"
