@@ -1,0 +1,55 @@
+Name       : hawaii-system-preferences
+Version    : 0.2.0.1.20131229.8341fd6
+Release    : 1
+Group      : Applications/System
+License    : BSD
+Summary    : Hawaii system preferences package
+Description: Provides greenisland system preferences for Hawaii desktop
+Sources    : 
+    - system-preferences-%{version}.tar.bz2
+
+Configure  : cmake 
+ConfigOptions: 
+    - -DCMAKE_BUILD_TYPE=RelWithDebInfo 
+
+PkgConfigBR:
+    - Qt5Core
+    - Qt0Xdg
+    - Qt5DBus
+    - Qt5Gui
+    - Qt5AccountsService
+    - Qt5Widgets
+    - Qt5Network
+    - Qt5Qml
+    - Qt5Quick
+    - Qt0Configuration
+    - polkit-qt-1
+
+PkgBR:
+    - cmake
+    - bzip2-devel
+    - xz-devel
+    - qt5-qttools-linguist
+    - kde-libkdeqt5staging-devel
+    - kde-kcoreaddons-devel
+    - kde-kconfig-devel
+
+
+Files:  
+   - "%{_bindir}/hawaii-system-preferences"
+   - "%{_libdir}/libHawaiiSystemPreferences.so.*"
+   - "%{_datadir}/hawaii-system-preferences/translations/it.qm"
+   - "%{_datadir}/applications/hawaii-system-preferences.desktop"
+   - "%{_libdir}/hawaii/plugins/preferences/background.so"
+   - "%{_libdir}/hawaii/plugins/preferences/network.so"
+
+SubPackages:
+    - Name: devel
+      Summary: Hawaii System Preferences development files
+      Group: Development/Libraries
+      Description: |
+          Provides a framework to develop additional System Preference modules
+      Files:
+          - "%{_includedir}/Hawaii/SystemPreferences/"
+          - "%{_libdir}/libHawaiiSystemPreferences.so"
+
