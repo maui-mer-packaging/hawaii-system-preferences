@@ -46,14 +46,13 @@ Provides a framework to develop additional System Preference modules.
 
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}-%{version}/upstream
 
 # >> setup
 # << setup
 
 %build
 # >> build pre
-cd upstream
 # << build pre
 
 %cmake .  \
@@ -67,7 +66,6 @@ make %{?_smp_mflags}
 %install
 rm -rf %{buildroot}
 # >> install pre
-cd upstream
 # << install pre
 %make_install
 

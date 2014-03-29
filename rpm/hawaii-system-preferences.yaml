@@ -8,6 +8,7 @@ Summary    : Hawaii system preferences
 Description: Provides preferences for the Hawaii desktop environment.
 Sources    : 
     - hawaii-system-preferences-%{version}.tar.xz
+SetupOptions: -q -n %{name}-%{version}/upstream
 
 Configure  : cmake 
 ConfigOptions: 
