@@ -82,6 +82,7 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
+%doc AUTHORS COPYING COPYING.LIB README
 %{_bindir}/hawaii-system-preferences
 %{_libdir}/libHawaiiSystemPreferences.so.*
 %{_datadir}/hawaii-system-preferences/translations/*.qm
