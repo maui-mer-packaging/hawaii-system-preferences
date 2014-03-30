@@ -76,5 +76,6 @@ desktop-file-install --delete-original       \
 %{_datadir}/applications/*.desktop
 %dir %{_datadir}/hawaii/preferences
 %{_datadir}/hawaii/preferences/
+%{_libdir}/hawaii/qml/Hawaii/SystemPreferences/
 # >> files
 # << files
