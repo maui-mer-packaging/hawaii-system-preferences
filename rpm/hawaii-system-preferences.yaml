@@ -36,7 +36,7 @@ Requires:
     - libhawaiishell
 
 Files:  
-   - "%doc AUTHORS COPYING COPYING.LIB README"
+   - "%doc AUTHORS COPYING COPYING.LIB README.md"
    - "%{_bindir}/hawaii-system-preferences"
    - "%dir %{_datadir}/hawaii-system-preferences"
    - "%dir %{_datadir}/hawaii-system-preferences/translations"

@@ -69,7 +69,7 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
-%doc AUTHORS COPYING COPYING.LIB README
+%doc AUTHORS COPYING COPYING.LIB README.md
 %{_bindir}/hawaii-system-preferences
 %dir %{_datadir}/hawaii-system-preferences
 %dir %{_datadir}/hawaii-system-preferences/translations
