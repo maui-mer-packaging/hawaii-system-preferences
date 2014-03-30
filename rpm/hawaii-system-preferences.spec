@@ -72,11 +72,9 @@ desktop-file-install --delete-original       \
 %doc AUTHORS COPYING COPYING.LIB README.md
 %{_bindir}/hawaii-system-preferences
 %dir %{_datadir}/hawaii-system-preferences
-%dir %{_datadir}/hawaii-system-preferences/translations
 %{_datadir}/hawaii-system-preferences/translations/*.qm
-%{_datadir}/hawaii-system-preferences/plugins/*/translations/*.qm
 %{_datadir}/applications/*.desktop
-%dir %{_libdir}/hawaii/plugins/preferences
-%{_libdir}/hawaii/plugins/preferences/*.so
+%dir %{_datadir}/hawaii/preferences
+%{_datadir}/hawaii/preferences/
 # >> files
 # << files
