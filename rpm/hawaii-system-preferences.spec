@@ -17,8 +17,6 @@ URL:        https://github.com/mauios/hawaii-system-preferences.git
 Source0:    hawaii-system-preferences-%{version}.tar.xz
 Source100:  hawaii-system-preferences.yaml
 Requires:   libhawaii
-Requires(post): /sbin/ldconfig
-Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5DBus)
 BuildRequires:  pkgconfig(Qt5Gui)
@@ -37,15 +35,6 @@ BuildRequires:  desktop-file-utils
 
 %description
 Provides preferences for the Hawaii desktop environment.
-
-%package devel
-Summary:    Hawaii System Preferences development files
-Group:      Development/Libraries
-Requires:   %{name} = %{version}-%{release}
-
-%description devel
-Provides a framework to develop additional System Preference modules.
-
 
 %prep
 %setup -q -n %{name}-%{version}/upstream
@@ -78,15 +67,10 @@ desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \
    %{buildroot}%{_datadir}/applications/*.desktop
 
-%post -p /sbin/ldconfig
-
-%postun -p /sbin/ldconfig
-
 %files
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING COPYING.LIB README
 %{_bindir}/hawaii-system-preferences
-%{_libdir}/libHawaiiSystemPreferences.so.*
 %dir %{_datadir}/hawaii-system-preferences
 %dir %{_datadir}/hawaii-system-preferences/translations
 %{_datadir}/hawaii-system-preferences/translations/*.qm
@@ -96,10 +80,3 @@ desktop-file-install --delete-original       \
 %{_libdir}/hawaii/plugins/preferences/*.so
 # >> files
 # << files
-
-%files devel
-%defattr(-,root,root,-)
-%{_includedir}/Hawaii/SystemPreferences/
-%{_libdir}/libHawaiiSystemPreferences.so
-# >> files devel
-# << files devel

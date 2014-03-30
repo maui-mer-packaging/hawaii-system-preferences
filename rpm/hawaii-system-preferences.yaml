@@ -38,7 +38,6 @@ Requires:
 Files:  
    - "%doc AUTHORS COPYING COPYING.LIB README"
    - "%{_bindir}/hawaii-system-preferences"
-   - "%{_libdir}/libHawaiiSystemPreferences.so.*"
    - "%dir %{_datadir}/hawaii-system-preferences"
    - "%dir %{_datadir}/hawaii-system-preferences/translations"
    - "%{_datadir}/hawaii-system-preferences/translations/*.qm"
@@ -46,14 +45,3 @@ Files:
    - "%{_datadir}/applications/*.desktop"
    - "%dir %{_libdir}/hawaii/plugins/preferences"
    - "%{_libdir}/hawaii/plugins/preferences/*.so"
-
-SubPackages:
-    - Name: devel
-      Summary: Hawaii System Preferences development files
-      Group: Development/Libraries
-      Description: |
-          Provides a framework to develop additional System Preference modules.
-      Files:
-          - "%{_includedir}/Hawaii/SystemPreferences/"
-          - "%{_libdir}/libHawaiiSystemPreferences.so"
-
