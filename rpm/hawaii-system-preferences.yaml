@@ -30,10 +30,10 @@ PkgBR:
     - qt5-qttools-linguist
     - qtaccountsservice-devel
     - qtconfiguration-devel
-    - libhawaii-devel
+    - libhawaiishell-devel
 
 Requires:
-    - libhawaii
+    - libhawaiishell
 
 Files:  
    - "%doc AUTHORS COPYING COPYING.LIB README"

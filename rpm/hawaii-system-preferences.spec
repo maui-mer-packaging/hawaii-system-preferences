@@ -16,7 +16,7 @@ License:    LGPLv2.1+ and GPLv2+
 URL:        https://github.com/mauios/hawaii-system-preferences.git
 Source0:    hawaii-system-preferences-%{version}.tar.xz
 Source100:  hawaii-system-preferences.yaml
-Requires:   libhawaii
+Requires:   libhawaiishell
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5DBus)
 BuildRequires:  pkgconfig(Qt5Gui)
@@ -30,7 +30,7 @@ BuildRequires:  bzip2-devel
 BuildRequires:  qt5-qttools-linguist
 BuildRequires:  qtaccountsservice-devel
 BuildRequires:  qtconfiguration-devel
-BuildRequires:  libhawaii-devel
+BuildRequires:  libhawaiishell-devel
 BuildRequires:  desktop-file-utils
 
 %description
